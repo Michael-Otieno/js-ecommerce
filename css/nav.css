@@ -48,7 +48,7 @@
 .search-btn{
     width: 80px;
     font-size: 17px;
-    font-weight: 800;
+    /* font-weight: 800; */
     border-top-right-radius: 14px;
     border-bottom-right-radius: 14px;
     outline: none;

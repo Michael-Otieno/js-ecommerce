@@ -14,7 +14,7 @@ const createNav = () =>{
         </div>
     </div>
 
-    <div class="search">
+    <div class="search pt-4">
         <input type="text" class="search-box" placeholder="Search for product...">
         <button class="search-btn">Search</button>
 
