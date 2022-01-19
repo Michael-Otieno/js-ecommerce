@@ -6,9 +6,9 @@ const createNav = () =>{
         <img src="./img/logo.png" alt="logo" width="100" height="40">
         <div class="topnav">
             <a href="#home">Home</a>
-            <a href="#men">Men</a>
-            <a href="#women">Women</a>
-            <a href="#children">Children</a>
+            <a href="#men">Suits</a>
+            <a href="#women">Shoes</a>
+            <a href="#children">Casual</a>
             <a href="#children">Accessories</a>
 
         </div>
