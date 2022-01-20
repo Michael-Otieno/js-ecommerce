@@ -1,0 +1,75 @@
+.product-details{
+    /* width: 100%; */
+    padding: 60px 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-slider{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    background-image: url("../img/shirt.jpg");
+    background-size: cover;
+}
+.product-images{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: #ffff;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    height: 100px;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.product-images img{
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.product-images img.active{
+    opacity: 0.5;
+}
+.details{
+    width: 50%;
+    padding-left: 20px;
+}
+.details h3,p{
+    text-transform: capitalize;
+}
+.details p{
+    font-size: 15px;
+    font-weight: 300;
+
+}
+.product-price{
+    font-size: 20px;
+    color: grey;
+    padding-left: 24px;
+}
+.previous-price{
+    font-size: 20px;
+    color: grey;
+    padding-left: 10px;
+    text-decoration: line-through;
+}
+.price-discount{
+    font-size: 15px;
+    color: rgb(189, 131, 131);
+    padding-left: 10px;
+    text-decoration: line-through;
+}
+
+.product-sub-heading{
+    font-size: 60v;
+    text-transform: uppercase;
+    margin: 60px 0 10px;
+    font-weight: 400;
+}

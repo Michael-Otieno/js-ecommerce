@@ -1,3 +1,6 @@
+.topbar{
+    background-color: rgb(216, 214, 214);
+}
 .nav-items{
     display: flex;
     justify-content: space-between;
