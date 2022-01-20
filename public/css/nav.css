@@ -32,13 +32,13 @@
 }
 .search-box{
     width: 400px;
-    height: 35px;
+    height: 39px;
     padding: 15px;
     font-size: 17px;
     border-top-left-radius: 14px;
     border-bottom-left-radius: 14px;
     outline: none;
-    border: none;
+    border:1px solid #d6d6d6;
 }
 .search-box::placeholder{
     color: #000;
@@ -48,7 +48,7 @@
 .search-btn{
     width: 80px;
     font-size: 17px;
-    /* font-weight: 800; */
+    margin-right: 10px;
     border-top-right-radius: 14px;
     border-bottom-right-radius: 14px;
     outline: none;
@@ -60,6 +60,11 @@
     background-color: #ddd;
     color: black;
 }
+
+.icon{
+    margin-left: 5px;
+}
+
 .tag{
     border: 2px solid #ddd;
     box-sizing: border-box;

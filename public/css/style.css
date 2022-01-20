@@ -1,4 +1,5 @@
 @import url('nav.css');
+@import url('footer.css');
 *{
     padding: 0;
     margin: 0;
@@ -171,81 +172,3 @@
   text-transform: capitalize;
 }
 
-
-footer{
-  background-color: rgb(110, 108, 108);
-  height: 420px
-  
-}
-.footer{
-  display: flex;
-  justify-content: space-between;
-
-}
-.footer-logo{
-  text-align: center;
-  
-}
-.contacts{
-  margin-right: 150px;
-  padding: 15px;
-  text-align: start;
-  display: flex;
-  justify-content: space-between;
-}
-
-.contact-list{
-  list-style: none;
-  padding-right: 15px;
-}
-
-.contact-header{
-  font-size: 15px;
-  text-decoration: underline;
-  color: #efefef;
-}
-
-.icon-list{
-  list-style: none;
-  padding-left: 25px;
-}
-.icon-header{
-  font-size: 15px;
-  text-decoration: underline;
-  color: #efefef;}
-
-.about-us{
-  text-align: center;
-  color: #efefef;
-  font-size: medium;
-}
-.about-para{
-  text-align: start;
-  font-size: 14px;
-  padding: 8px;
-}
-
-.icon-list li a{
-  text-decoration: none;
-  font-size: 12px;
-  color: #efefef;
-  padding-left: 7px;
-  opacity: 1;
-
-
-}
-
-.contact-list li a{
-  text-decoration: none;
-  font-size: 12px;
-  color: #efefef;
-  opacity: 1;
-  padding-left: 7px;
-}
-.contact-list li a:hover{
-  opacity: 0.7;
-}
-
-.icon-list li a:hover{
-  opacity: 0.7;
-}
