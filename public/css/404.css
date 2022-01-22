@@ -1,0 +1,17 @@
+.error-msg{
+    display: block;
+    justify-content: center;
+    
+}
+.four-0-four-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 20px;    
+}
+.four-0-four-msg{
+    text-align: center;
+    text-transform: capitalize;
+    color: grey;
+}
