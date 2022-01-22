@@ -12,46 +12,62 @@ window.onload = () => {
     }
 }
 
+
+
 const loader = document.querySelector('.loader');
 // select inputs
 
 const submitBtn = document.querySelector('.submit-btn');
-const name = document.querySelector('#name');
+const name = document.querySelector('#name') || null;
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
-const number = document.querySelector('#number');
-const tac = document.querySelector('#terms-and-cond');
-const notification = document.querySelector('#notification');
+const number = document.querySelector('#number') || null;
+const tac = document.querySelector('#terms-and-cond') || null;
+const notification = document.querySelector('#notification') || null;
 
 submitBtn.addEventListener('click',() =>{
-    if(name.value.length < 3){
-        alert('name must be 3 letters long');
-    }
-    // to check
-    else if(!email.value.length){
-        alert('enter your email a valid email address');
-    }else if(password.value.length < 8){
-        alert('password should be 8 letters long');
-    }else if(!number.value.length){
-        alert('enter your correct phone number');
-    }else if(!Number(number.value) || number.value.length < 10){
-        alert('invalidnumber, please enter valid one');
-    }else if(!tac.checked){
-        alert('you must agree to our terms and conditions');
-    }else{
-    // submit form
-        loader.style.display = 'block';
-        sendData('/signup', {
-            name: name.value,
-            email: email.value,
-            password: password.value,
-            number: number.value,
-            tac: tac.checked,
-            notification: notification.checked,
-            seller:false
-
-        })
+    if(name != null){ //then we are on signup page
+        if(name.value.length < 3){
+            alert('name must be 3 letters long');
+        }
+        // to check
+        else if(!email.value.length){
+            alert('enter your email a valid email address');
+        }else if(password.value.length < 8){
+            alert('password should be 8 letters long');
+        }else if(!number.value.length){
+            alert('enter your correct phone number');
+        }else if(!Number(number.value) || number.value.length < 10){
+            alert('invalidnumber, please enter valid one');
+        }else if(!tac.checked){
+            alert('you must agree to our terms and conditions');
+        }else{
+        // submit form
+            loader.style.display = 'block';
+            sendData('/signup', {
+                name: name.value,
+                email: email.value,
+                password: password.value,
+                number: number.value,
+                tac: tac.checked,
+                notification: notification.checked,
+                seller:false
     
+            })
+        
+        }
+
+    }else{
+        // if name equals none the login
+        if(!email.value || !password.value.length){
+            alert('fill in all the inputs');
+        }else{
+            loader.style.display = 'block';
+            sendData('/login',{
+                email: email.value,
+                password: password.value,
+            })
+        }
     }
 })
 
