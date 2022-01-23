@@ -4,7 +4,6 @@ window.onload = () => {
     if(sessionStorage.user){
         // check if user already exists in storage
         // user existing wont access website from signup section
-
         user = JSON.parse(sessionStorage.user);
         if(compareToken(user.authToken,user.email)){
             location.replace('/');
