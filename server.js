@@ -87,9 +87,7 @@ app.post("/signup", (req,res) => {
 // login route
 app.get("/login", (req,res) => {
     res.sendFile(path.join(staticPath, "login.html"));
-
 })
-
 
 app.post('/login', (req, res) => {
     let{email, password} = req.body;
@@ -101,7 +99,8 @@ app.post('/login', (req, res) => {
     // check if user exists or not
     db.collection('users').doc(email).get()
     .then(user => {
-        if(!user.exists){//if email does not exists
+        if(!user.exists){
+            //if email does not exists
             return res.json({'alert': 'log in email does not exist'})
         }else{
             // use bcrypt to compare password
@@ -123,6 +122,31 @@ app.post('/login', (req, res) => {
             })
         }
     })
+})
+
+// seller route
+app.get("/seller", (req,res) => {
+    res.sendFile(path.join(staticPath, "seller.html"));
+})
+
+app.post('/seller', (req, res)=>{
+    let{name, address, about, number, tac, legitInfo, email}=req.body;
+
+    if(!name.length || !address.length || !about.length || number.length < 10 || !Number(number)){
+        return res.json({'alert': 'some information(s) is/areinvalid'})
+    }else if(!tac || !legitInfo){
+        return res.json({'alert':'you must agree to all our terms and conditions'})
+    }else{
+        // update users seller status here
+        db.collection('sellers').doc(email).set(req.body)
+        .then(data => {
+            db.collection('users').doc(email).update({
+                seller:true
+            }).then(data =>{
+                res.json(true);
+            })
+        })
+    }
 })
 
 // 404 route

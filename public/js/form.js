@@ -1,11 +1,10 @@
 // redirect to homepage if user logged in
-
 window.onload = () => {
     if(sessionStorage.user){
         // check if user already exists in storage
         // user existing wont access website from signup section
         user = JSON.parse(sessionStorage.user);
-        if(compareToken(user.authToken,user.email)){
+        if(compareToken(user.authToken, user.email)){
             location.replace('/');
         }
     }
@@ -15,7 +14,6 @@ window.onload = () => {
 
 const loader = document.querySelector('.loader');
 // select inputs
-
 const submitBtn = document.querySelector('.submit-btn');
 const name = document.querySelector('#name') || null;
 const email = document.querySelector('#email');
@@ -72,30 +70,30 @@ submitBtn.addEventListener('click',() =>{
 
 
 // send data function
-const sendData = (path, data) =>{
-    fetch(path, {
-        method:'post',
-        headers: new Headers({'Content-Type':'application/json'}),
-        body: JSON.stringify(data)
-    }).then((res) => res.json())
-    .then(response =>{
-        // console.log(response)
-        processData(response);
-    });
-}
+// const sendData = (path, data) =>{
+//     fetch(path, {
+//         method:'post',
+//         headers: new Headers({'Content-Type':'application/json'}),
+//         body: JSON.stringify(data)
+//     }).then((res) => res.json())
+//     .then(response =>{
+//         // console.log(response)
+//         processData(response);
+//     });
+// }
 
-const processData = (data) => {
-    loader.style.display = null;
-    if(data.alert){
-        alert(data.alert)
-    }else if(data.name){
-        // create auth token
-        // console.log(data)
-        data.authToken = generateToken(data.email);
-        sessionStorage.user = JSON.stringify(data);
-        location.replace('/');
-    }
-}
+// const processData = (data) => {
+//     loader.style.display = null;
+//     if(data.alert){
+//         alert(data.alert)
+//     }else if(data.name){
+//         // create auth token
+//         // console.log(data)
+//         data.authToken = generateToken(data.email);
+//         sessionStorage.user = JSON.stringify(data);
+//         location.replace('/');
+//     }
+// }
 
 
 

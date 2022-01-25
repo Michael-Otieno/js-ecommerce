@@ -35,30 +35,38 @@ const compareToken = (token, key) => {
 // common functions needed for sellers dashboard
 
 // send data function
-// const sendData = (path, data) =>{
-//     fetch(path, {
-//         method:'post',
-//         headers: new Headers({'Content-Type':'application/json'}),
-//         body: JSON.stringify(data)
-//     }).then((res) => res.json())
-//     .then(response =>{
-//         // console.log(response)
-//         processData(response);
-//     });
-// }
+const sendData = (path, data) => {
+    fetch(path,{
+        method:'post',
+        headers: new Headers({'Content-Type': 'application/json'}),
+        body: JSON.stringify(data)
+    }).then((res) => res.json())
+    .then(response => {
+        console.log(response)
+        processData(response);
+    });
+}
 
-// const processData = (data) => {
-//     loader.style.display = null;
-//     if(data.alert){
-//         alert(data.alert)
-//     }else if(data.name){
-//         // create auth token
-//         // console.log(data)
-//         data.authToken = generateToken(data.email);
-//         sessionStorage.user = JSON.stringify(data);
-//         location.replace('/');
-//     }
-// }
+
+const processData = (data) => {
+    // console.log(data);
+    loader.style.display = null;
+    if(data.alert){
+        alert(data.alert)
+    }else if(data.name){
+        // create auth token
+        // console.log(data)
+        data.authToken = generateToken(data.email);
+        sessionStorage.user = JSON.stringify(data);
+        location.replace('/');
+    }else if(data==true){
+        // seller page
+        let user = JSON.parse(sessionStorage.user);
+        user.seller = true;
+        sessionStorage.user = JSON.stringify(user)
+        location.reload(); 
+    }
+}
 
 
 

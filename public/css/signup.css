@@ -28,7 +28,7 @@ body{
 
 }
 input[type="text"],
-input[type="password"]{
+input[type="password"],textarea{
     display: block;
     width: 300px;
     height: 40px;
@@ -127,7 +127,12 @@ label a{
     text-align: center;
     display: block;
 }
-
+.tag{
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+}
 /* .alert-box{
     width: 300px;
     min-height: 180px;
